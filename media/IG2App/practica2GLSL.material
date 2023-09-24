@@ -1,0 +1,195 @@
+vertex_program BombaTeseladaVS glsl{
+    source BombaTeseladaVS.glsl
+    default_params{
+        param_named_auto modelViewProjMat worldviewproj_matrix
+    }
+}
+
+fragment_program BombaTeseladaFS glsl{
+    source BombaTeseladaFS.glsl
+    default_params{
+        param_named textura0 int 0
+        param_named textura1 int 1
+        param_named textura2 int 2
+    }
+}
+
+material Practica2/BombaTeselada{
+    technique{
+        pass{
+            vertex_program_ref BombaTeseladaVS{}
+            fragment_program_ref BombaTeseladaFS{}
+            texture_unit{
+                texture checker.png 2d
+                text_adress_mode wrap
+            }
+            texture_unit{
+                texture BumpyMetal.jpg 2d
+                text_adress_mode wrap
+            }
+            texture_unit{
+                texture spaceSky.jpg 2d
+                text_adress_mode wrap
+            }
+        }
+    }
+}
+
+vertex_program SpaceSkyVS glsl{
+    source SpaceSkyVS.glsl
+    default_params{
+        param_named_auto modelViewProjMat worldviewproj_matrix
+    }
+}
+
+fragment_program SpaceSkyFS glsl{
+    source SpaceSkyFS.glsl
+    default_params{
+        param_named textura0 int 0
+        param_named textura1 int 1
+    }
+}
+
+material Practica2/SpaceSky{
+    technique{
+        pass{
+            vertex_program_ref SpaceSkyVS{}
+            fragment_program_ref SpaceSkyFS{}
+            texture_unit{
+                texture lightMap.jpg 2d
+            }
+            texture_unit{
+                texture spaceSky.jpg 2d
+            }
+        }
+    }
+}
+
+vertex_program SpaceVS glsl{
+    source SpaceVS.glsl
+    default_params{
+        param_named_auto modelViewProjMat worldviewproj_matrix
+        param_named_auto sintime sintime_0_2pi 1
+    }
+}
+
+fragment_program SpaceFS glsl{
+    source SpaceFS.glsl
+    default_params{
+        param_named textura0 int 0
+        param_named textura1 int 1
+    }
+}
+
+material Practica2/Space{
+    technique{
+        pass{
+            vertex_program_ref SpaceVS{}
+            fragment_program_ref SpaceFS{}
+            texture_unit{
+                texture lightMap.jpg 2d
+            }
+            texture_unit{
+                texture spaceSky.jpg 2d
+            }
+        }
+    }
+}
+
+fragment_program HolesFS glsl{
+    source HolesFS.glsl
+    default_params{
+        param_named textura0 int 0
+        param_named textura1 int 1
+        param_named textura2 int 2
+    }
+}
+
+material Practica2/Holes{
+    technique{
+        pass{
+            vertex_program_ref BombaTeseladaVS{}
+            fragment_program_ref HolesFS{}
+            cull_software none
+            cull_hardware none
+            texture_unit{
+                texture corrosion.jpg 2d
+                text_adress_mode wrap
+            }
+            texture_unit{
+                texture BumpyMetal.jpg 2d
+                text_adress_mode wrap
+            }
+            texture_unit{
+                texture BeachStones.jpg 2d
+                text_adress_mode wrap
+            }
+        }
+    }
+}
+
+fragment_program HolesAndLightingFS glsl
+{
+    source HolesAndLightingFS.glsl
+    default_params 
+    {  
+        param_named textura0 int 0
+        param_named textura1 int 1
+        param_named textura2 int 2
+
+        param_named ocre float3 0.72 0.57 0.35
+        param_named azul float3 0.0 0.6 0.83
+
+        param_named_auto lightPosition light_position 0 
+        param_named_auto lightDiffuse light_diffuse_colour 0
+        param_named lightAmbient float3 1.0 1.0 1.0
+
+        param_named materialDiffuse float3 0.7 0.7 0.7
+    }
+}
+
+vertex_program HolesAndLightingVS glsl
+{
+    source HolesAndLightingVS.glsl
+    default_params 
+    {
+        param_named_auto modelViewProjMat worldviewproj_matrix
+        param_named_auto normalMat inverse_transpose_world_matrix
+        param_named_auto modelViewMat worldview_matrix
+    }
+}
+
+material Practica2/HolesAndLighting
+{
+    technique 
+    {
+        pass
+        {
+            cull_hardware none
+            cull_software none
+            
+            vertex_program_ref HolesAndLightingVS
+            { // params ‐> default_params
+            }
+            fragment_program_ref HolesAndLightingFS
+            { // params ‐> default_params
+            }
+            
+            texture_unit // unit 0
+            {
+                texture BumpyMetal.jpg 2d
+                text_adress_mode wrap
+            }
+            texture_unit // unit 1
+            {
+                texture BeachStones.jpg 2d
+                text_adress_mode wrap
+            }
+            texture_unit // unit 2
+            {
+                texture corrosion.jpg 2d
+                text_adress_mode wrap
+            }
+        }
+    }
+}

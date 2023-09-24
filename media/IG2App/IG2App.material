@@ -1,0 +1,261 @@
+#pragma once
+
+//Texturas
+material IG2App/checkers
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture checker.png
+      }
+    }
+  }
+}
+material IG2App/woodPallet
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture WoodPallet.png
+      }
+    }
+  }
+}
+
+material IG2App/tusk
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tusk.png
+      }
+    }
+  }
+}
+
+material IG2App/billboard
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture billboard.png
+        env_map spherical
+      }
+    }
+  }
+}
+
+material IG2App/water
+{
+  technique
+  {
+    pass
+    {
+      emissive 1 1 1 1
+      texture_unit
+      {
+        texture water.png
+		scroll_anim 0.2 0.2
+      }
+    }
+  }
+}
+
+material IG2App/rocks
+{
+  technique
+  {
+    pass
+    {
+      emissive 1 1 1 1
+      texture_unit
+      {
+        texture rocks.tga
+      }
+    }
+  }
+}
+material IG2App/10points
+{
+  technique
+  {
+    pass
+    {
+      emissive 1 1 1 1
+      texture_unit
+      {
+        texture 10points.png
+        tex_address_mode clamp
+      }
+    }
+  }
+}
+material IG2App/smoke
+{
+  technique
+  {
+    pass
+	{	
+		lighting off
+		scene_blend alpha_blend
+		depth_write off
+		diffuse vertexcolour
+      texture_unit
+      {
+        texture smoke.png
+        tex_address_mode clamp
+      }
+    }
+  }
+}
+
+//Solid Colors
+material IG2App/Red
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        colour_op_ex source1 src_manual src_current 0.6 0 0
+      }
+    }
+  }
+}
+material IG2App/Yellow
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        colour_op_ex source1 src_manual src_current 0.6 0.6 0
+      }
+    }
+  }
+}
+//Shaded Colors
+material IG2App/shRed
+{
+  technique
+  {
+    pass
+    {
+      lighting on
+
+      ambient 0.3 0.3 0.3 1
+      diffuse 0.7 0.2 0.1 1
+      emissive 0 0 0 1
+    }
+  }
+}
+material IG2App/shOrange
+{
+  technique
+  {
+    pass
+    {
+      lighting on
+
+      ambient 0.3 0.3 0.3 1
+      diffuse 0.7 0.4 0.1 1
+      emissive 0 0 0 1
+    }
+  }
+}
+material IG2App/shYellow
+{
+  technique
+  {
+    pass
+    {
+      lighting on
+
+      ambient 0.3 0.3 0.3 1
+      diffuse 0.7 0.7 0.1 1
+      emissive 0 0 0 1
+    }
+  }
+}
+material IG2App/shBlue
+{
+  technique
+  {
+    pass
+    {
+      lighting on
+
+      ambient 0.3 0.3 0.3 1
+      diffuse 0.1 0.2 0.7 1
+      emissive 0 0 0 1
+    }
+  }
+}
+material IG2App/shBrown
+{
+  technique
+  {
+    pass
+    {
+      lighting on
+
+      ambient 0.3 0.3 0.3 1
+      diffuse 0.5 0.25 0.1 1
+      emissive 0 0 0 1
+    }
+  }
+}
+material IG2App/RadioactiveGreen
+{
+  technique
+  {
+    pass
+    {
+      lighting on
+
+      ambient 0.1 0.3 0.1 1
+      diffuse 0.2 0.2 0.2 1
+      emissive 0.05 0.8 0.05 1
+    }
+  }
+}
+material IG2App/space
+{
+  technique
+  {
+    pass
+    {
+	
+      lighting off
+	  
+      texture_unit
+      {
+		tex_coor set 0
+		colour_op modulate
+		texture spaceSky.jpg
+    rotate_anim 0.1
+      }
+	  
+	  texture_unit
+      {
+		tex_coor set 0
+		colour_op modulate
+        texture lightMap.jpg
+      }
+    }
+  }
+}

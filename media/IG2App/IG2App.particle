@@ -1,0 +1,104 @@
+particle_system IG2App/Trail
+{ // p. s. attributes
+	renderer billboard
+	billboard_type point
+	particle_width 10
+	particle_height 10
+	quota 500
+	material IG2App/smoke
+emitter Point
+{ // e. attributes
+	direction 0 0 0
+	emission_rate 100
+	time_to_live 1
+	velocity_min 80
+	velocity_max 80
+	colour 1 1 1 0.5
+}
+affector ColourFader
+{
+    alpha -0.5
+}
+}
+
+particle_system IG2App/SmokePlane
+{ // p. s. attributes
+	renderer billboard
+	billboard_type point
+	particle_width 10
+	particle_height 10
+	quota 500
+	material IG2App/smoke
+emitter Point
+{ // e. attributes
+	direction 0 1 0
+	angle 35
+	emission_rate 15
+	time_to_live 1
+	velocity_min 50
+	velocity_max 80
+	colour 0.3 0.3 0.3 0.5
+}
+affector ColourFader
+{ // a. attributes
+	red 0.5
+	green 0.5
+	blue 0.5
+	alpha -0.5
+}
+
+affector Rotator // the texture
+{ // a. attributes
+	rotation_range_start 0
+	rotation_range_end 360
+	rotation_speed_range_start -60
+	rotation_speed_range_end 200
+}
+affector Scaler
+{ // a. attributes
+	rate 50
+}
+affector DirectionRandomiser
+{ // a. attributes
+	randomness 5
+}
+}
+
+particle_system IG2App/Smoke
+{ // p. s. attributes
+	renderer billboard
+	billboard_type point
+	particle_width 30
+	particle_height 30
+	quota 500
+	material IG2App/smoke
+emitter Point
+{ // e. attributes
+	direction 0 1 0
+	angle 35
+	emission_rate 15
+	time_to_live 4
+	velocity_min 50
+	velocity_max 80
+}
+affector ColourImage
+{ // a. attributes
+	image smokecolors.png
+}
+
+affector Rotator // the texture
+{ // a. attributes
+	rotation_range_start 0
+	rotation_range_end 360
+	rotation_speed_range_start -60
+	rotation_speed_range_end 200
+}
+affector Scaler
+{ // a. attributes
+	rate 50
+}
+affector DirectionRandomiser
+{ // a. attributes
+	randomness 5
+}
+}

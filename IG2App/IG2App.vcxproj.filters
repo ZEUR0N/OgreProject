@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de código fuente">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de código fuente\GameObjects">
+      <UniqueIdentifier>{b7ba77a7-4efc-41d4-8b0c-dfef246b2832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\GameObjects">
+      <UniqueIdentifier>{0fc5ae2d-3270-47eb-be07-34345218809e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\utils">
+      <UniqueIdentifier>{840092c2-08cf-4633-bf13-6e47740a5ee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\utils">
+      <UniqueIdentifier>{3d1ea062-4422-4054-9f6e-17050504c837}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IG2ApplicationContext.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="IG2App.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\EntidadIG.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\GameObjects.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="IG2ApplicationContext.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="IG2App.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="IG2Main.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\EntidadIG.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\GameObjects.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
